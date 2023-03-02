@@ -1,0 +1,22 @@
+# Relogio
+
+function atualizaHora() {
+  // Cria um objeto Date com a hora atual do sistema
+  var data = new Date();
+  
+  // Obtém a hora, minutos e segundos da data
+  var hora = data.getHours();
+  var minutos = data.getMinutes();
+  var segundos = data.getSeconds();
+  
+  // Formata a hora, adicionando um zero à esquerda se necessário
+  hora = (hora < 10 ? "0" : "") + hora;
+  minutos = (minutos < 10 ? "0" : "") + minutos;
+  segundos = (segundos < 10 ? "0" : "") + segundos;
+  
+  // Exibe a hora atual no formato HH:MM:SS
+  document.getElementById("relogio").innerHTML = hora + ":" + minutos + ":" + segundos;
+}
+
+// Atualiza a hora a cada segundo
+setInterval(atualizaHora, 1000);
